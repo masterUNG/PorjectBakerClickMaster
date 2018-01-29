@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "317569107296",
+    "firebase_url": "https://bakerclick-91c44.firebaseio.com",
+    "project_id": "bakerclick-91c44",
+    "storage_bucket": "bakerclick-91c44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317569107296:android:a5089e8783a8d333",
+        "android_client_info": {
+          "package_name": "piyawat.bakerclick.com.bakerclick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317569107296-uvtmvd4vi13d8u3jg37ahnar4a12lmbe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "piyawat.bakerclick.com.bakerclick",
+            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
+          }
+        },
+        {
+          "client_id": "317569107296-nnjidp7pcvs5qgb1de7ma6287ev3uhc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiP5lNvqccUHCuSxAETnH18Kp970_OSZE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317569107296-nnjidp7pcvs5qgb1de7ma6287ev3uhc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
