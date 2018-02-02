@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:text="Promotion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!--Big Image-->
+    <LinearLayout
+        android:padding="@dimen/padding"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heigth">
+
+        <View
+            android:background="#efce15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <!--Small Image-->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heigth">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:background="#e71e1e"
+                android:layout_margin="@dimen/padding"
+                android:layout_width="@dimen/heigth"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:background="#e7d61e"
+                android:layout_margin="@dimen/padding"
+                android:layout_width="@dimen/heigth"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:background="#68e71e"
+                android:layout_margin="@dimen/padding"
+                android:layout_width="@dimen/heigth"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:background="#1ea1e7"
+                android:layout_margin="@dimen/padding"
+                android:layout_width="@dimen/heigth"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:background="#781ee7"
+                android:layout_margin="@dimen/padding"
+                android:layout_width="@dimen/heigth"
+                android:layout_height="match_parent"/>
 
 
-</RelativeLayout>
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+</LinearLayout>
