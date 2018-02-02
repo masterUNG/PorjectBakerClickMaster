@@ -13,8 +13,62 @@
         android:layout_height="match_parent">
 
         <!--Toolbar Search View-->
+        <include layout="@layout/toolbar_search"/>
 
         <!--Content of Promotion and Category-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Promote and Category-->
+            <ScrollView
+                android:layout_above="@+id/linearFootBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+               <LinearLayout
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+
+                   <!--Promotion-->
+                   <FrameLayout
+                       android:id="@+id/contentPromotionFragment"
+                       android:layout_weight="1"
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"/>
+
+                   <!--Category-->
+                   <FrameLayout
+                       android:id="@+id/contentCategoryFragment"
+                       android:layout_weight="1"
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"/>
+
+
+               </LinearLayout>
+
+            </ScrollView>
+
+
+            <!--Foot Bar-->
+            <LinearLayout
+                android:id="@+id/linearFootBar"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <TextView
+                    android:text="Foot Bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
 
 
     </LinearLayout>
