@@ -4,4 +4,6 @@
     <dimen name="h1">24sp</dimen>
     <dimen name="heigth">160dp</dimen>
     <dimen name="padding">16dp</dimen>
+    <dimen name="promotion_width">150dp</dimen>
+    <dimen name="promotion_height">180dp</dimen>
 </resources>
