@@ -17,7 +17,7 @@ import piyawat.bakerclick.com.bakerclick.R;
  * Created by masterung on 12/2/2018 AD.
  */
 
-public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.ViewHolder>{
+public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.ViewHolder> {
 
     private Context context;
     private List<Integer> integerList = Collections.emptyList();
@@ -44,7 +44,11 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
     @Override
     public void onBindViewHolder(PromotionAdapter.ViewHolder holder, int position) {
 
+        int imageInt = integerList.get(position);
+        String titleString = stringList.get(position);
 
+        holder.imageView.setImageResource(imageInt);
+        holder.textView.setText(titleString);
 
     }
 
@@ -61,7 +65,7 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
         public ViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageViewPromotion);
-            textView = itemView.findViewById(R.id.textViewTitle);
+            textView = itemView.findViewById(R.id.textViewPromotion);
         }
     }   // ViewHolder Class
 

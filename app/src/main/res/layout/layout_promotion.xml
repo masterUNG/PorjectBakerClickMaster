@@ -17,7 +17,7 @@
 
         <!--Title-->
         <TextView
-            android:id="@+id/textViewTitle"
+            android:id="@+id/textViewPromotion"
             android:textColor="#ffffff"
             android:background="#64000000"
             android:layout_alignParentBottom="true"
