@@ -9,7 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import piyawat.bakerclick.com.bakerclick.R;
 import piyawat.bakerclick.com.bakerclick.utility.MyConstance;
@@ -32,11 +39,43 @@ public class PromotionFragment extends Fragment{
 //        Get Value From MyConstance
         getValueFromMyConstance();
 
+//        Get Value From Firebase
+        getValueFromFirebase();
+
 //        Create RecycleView
         createRecycleView();
 
 
     }   // Main Method
+
+    private void getValueFromFirebase() {
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference().child("Promotion");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                int[] countInts = new int[]{0};
+                List list = new ArrayList();
+
+            }   // onDataChange
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+
+
+    }   // getValueFromFirebase
+
 
     private void createRecycleView() {
 
@@ -67,7 +106,7 @@ public class PromotionFragment extends Fragment{
         MyConstance myConstance = new MyConstance();
         imageInts = myConstance.getInts();
         promotionStrings = myConstance.getPromotionStrings();
-    }
+    }   // getValueFromMyConstance
 
     @Nullable
     @Override
