@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import java.util.List;
 import piyawat.bakerclick.com.bakerclick.R;
 import piyawat.bakerclick.com.bakerclick.utility.MyConstance;
 import piyawat.bakerclick.com.bakerclick.utility.PromotionAdapter;
+import piyawat.bakerclick.com.bakerclick.utility.PromotionModel;
 
 /**
  * Created by masterung on 2/2/2018 AD.
@@ -42,10 +44,6 @@ public class PromotionFragment extends Fragment{
 //        Get Value From Firebase
         getValueFromFirebase();
 
-//        Create RecycleView
-        createRecycleView();
-
-
     }   // Main Method
 
     private void getValueFromFirebase() {
@@ -57,8 +55,30 @@ public class PromotionFragment extends Fragment{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+
                 int[] countInts = new int[]{0};
+                int amountOfChild = (int) dataSnapshot.getChildrenCount(); // Amount of Child
+                Log.d("6AprilV1", "amountOfChild ==> " + amountOfChild);
+
+                String[] nameStrings = new String[amountOfChild];
+                String[] urlStrings = new String[amountOfChild];
+
                 List list = new ArrayList();
+
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                    PromotionModel promotionModel = dataSnapshot1.getValue(PromotionModel.class);
+                    list.add(promotionModel);
+
+                    nameStrings[countInts[0]] = promotionModel.getNameString();
+                    urlStrings[countInts[0]] = promotionModel.getUrlString();
+
+                    Log.d("6AprilV1", "nameString[" + countInts[0] + "] ==> " + nameStrings[countInts[0]]);
+
+                    countInts[0] += 1;
+                }   // for
+
+                createRecycleView(nameStrings, urlStrings);
 
             }   // onDataChange
 
@@ -68,25 +88,28 @@ public class PromotionFragment extends Fragment{
             }
         });
 
-
-
-
-
-
-
     }   // getValueFromFirebase
 
 
-    private void createRecycleView() {
+    private void createRecycleView(String[] nameStrings, String[] urlStrings) {
 
         RecyclerView recyclerView = getView().findViewById(R.id.recycleViewPromotion);
+
         ArrayList<Integer> integerArrayList = new ArrayList<>();
+
+//        Title
         ArrayList<String> stringArrayList = new ArrayList<>();
 
+//        Image
+        ArrayList<String> imageStringArrayList1 = new ArrayList<>();
+
 //       Get Array
-        for (int i=0; i<imageInts.length; i+=1) {
+        for (int i=0; i<nameStrings.length; i+=1) {
             integerArrayList.add(imageInts[i]);
-            stringArrayList.add(promotionStrings[i]);
+
+            stringArrayList.add(nameStrings[i]);
+            imageStringArrayList1.add(urlStrings[i]);
+
         }   // for
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(),

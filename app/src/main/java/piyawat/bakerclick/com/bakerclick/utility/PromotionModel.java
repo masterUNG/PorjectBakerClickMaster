@@ -5,17 +5,19 @@ import android.os.Parcelable;
 
 public class PromotionModel implements Parcelable{
 
-    private String nameString;
+    private String nameString, urlString;
 
     public PromotionModel() {
     }
 
-    public PromotionModel(String nameString) {
+    public PromotionModel(String nameString, String urlString) {
         this.nameString = nameString;
+        this.urlString = urlString;
     }
 
     protected PromotionModel(Parcel in) {
         nameString = in.readString();
+        urlString = in.readString();
     }
 
     public static final Creator<PromotionModel> CREATOR = new Creator<PromotionModel>() {
@@ -38,6 +40,14 @@ public class PromotionModel implements Parcelable{
         this.nameString = nameString;
     }
 
+    public String getUrlString() {
+        return urlString;
+    }
+
+    public void setUrlString(String urlString) {
+        this.urlString = urlString;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -46,5 +56,6 @@ public class PromotionModel implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nameString);
+        dest.writeString(urlString);
     }
 }   // Main Class
