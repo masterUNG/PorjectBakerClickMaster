@@ -21,6 +21,7 @@ import java.util.List;
 
 import piyawat.bakerclick.com.bakerclick.R;
 import piyawat.bakerclick.com.bakerclick.utility.MyConstance;
+import piyawat.bakerclick.com.bakerclick.utility.MyPromotionAdapter;
 import piyawat.bakerclick.com.bakerclick.utility.PromotionAdapter;
 import piyawat.bakerclick.com.bakerclick.utility.PromotionModel;
 
@@ -95,7 +96,7 @@ public class PromotionFragment extends Fragment{
 
         RecyclerView recyclerView = getView().findViewById(R.id.recycleViewPromotion);
 
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
+
 
 //        Title
         ArrayList<String> stringArrayList = new ArrayList<>();
@@ -103,9 +104,10 @@ public class PromotionFragment extends Fragment{
 //        Image
         ArrayList<String> imageStringArrayList1 = new ArrayList<>();
 
+
 //       Get Array
         for (int i=0; i<nameStrings.length; i+=1) {
-            integerArrayList.add(imageInts[i]);
+
 
             stringArrayList.add(nameStrings[i]);
             imageStringArrayList1.add(urlStrings[i]);
@@ -115,9 +117,13 @@ public class PromotionFragment extends Fragment{
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        PromotionAdapter promotionAdapter = new PromotionAdapter(getActivity(),
-                integerArrayList, stringArrayList);
-        recyclerView.setAdapter(promotionAdapter);
+
+        MyPromotionAdapter myPromotionAdapter = new MyPromotionAdapter(getActivity(),
+                stringArrayList, imageStringArrayList1);
+
+
+
+        recyclerView.setAdapter(myPromotionAdapter);
 
 
 
